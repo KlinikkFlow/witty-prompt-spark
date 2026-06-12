@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KlinikkFlow — Meta Ads Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --border:#e6e8eb; --ink:#1f2a37; --muted:#6b7280;
+    --green:#16a34a; --green-bg:#e7f6ec; --green-soft:#dcf3e4;
+    --red:#dc2626; --red-bg:#fdeaea; --yellow:#d97706; --yellow-bg:#fdf3e3;
+    --blue:#2563eb; --chip-green:#1a8c4a; --shadow:0 1px 2px rgba(16,24,40,.04),0 1px 3px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:14px;line-height:1.45;}
+  .wrap{max-width:1280px;margin:0 auto;padding:20px 22px 48px;}
+  header.top{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  header.top h1{font-size:21px;font-weight:700;margin:0;letter-spacing:-.01em;}
+  header.top .sub{color:var(--muted);font-size:13px;margin-top:3px;}
+  header.top .upd{color:var(--muted);font-size:12.5px;text-align:right;}
+  header.top .upd b{color:var(--ink);font-weight:600;}
+  .grid{display:grid;gap:16px;}
+  .kpis{grid-template-columns:repeat(4,1fr);}
+  @media(max-width:880px){.kpis{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.kpis{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);}
+  .kpi{padding:18px 20px;}
+  .kpi .lbl{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:6px;}
+  .kpi .val{font-size:38px;font-weight:700;letter-spacing:-.02em;line-height:1.05;}
+  .kpi .val small{font-size:18px;font-weight:600;color:var(--muted);}
+  .kpi .delta{font-size:12.5px;color:var(--muted);margin-top:8px;}
+  .kpi.good{background:var(--green-bg);border-color:var(--green-soft);}
+  .kpi.bad{background:var(--red-bg);border-color:#f7d4d4;}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;}
+  .pill.g{background:var(--green-bg);color:var(--chip-green);}
+  .pill.y{background:var(--yellow-bg);color:var(--yellow);}
+  .pill.r{background:var(--red-bg);color:var(--red);}
+  section{margin-top:18px;}
+  .section-title{font-size:15px;font-weight:700;margin:0 0 10px;display:flex;align-items:center;gap:8px;}
+  .flags{padding:6px 6px;}
+  .flag{display:flex;gap:11px;align-items:flex-start;padding:11px 14px;border-radius:10px;margin:6px;}
+  .flag .dot{width:9px;height:9px;border-radius:50%;margin-top:6px;flex:none;}
+  .flag.red{background:var(--red-bg);} .flag.red .dot{background:var(--red);}
+  .flag.yellow{background:var(--yellow-bg);} .flag.yellow .dot{background:var(--yellow);}
+  .flag.billing{background:#eef2ff;} .flag.billing .dot{background:var(--blue);}
+  .flag .txt{font-size:13.5px;}
+  .charts{grid-template-columns:1fr 1fr;}
+  @media(max-width:880px){.charts{grid-template-columns:1fr;}}
+  .chart-card{padding:16px 18px;}
+  .chart-card h3{font-size:14px;margin:0 0 12px;font-weight:700;}
+  .chart-box{position:relative;height:330px;}
+  .table-card{padding:6px 6px 10px;overflow:hidden;}
+  .table-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px;gap:10px;flex-wrap:wrap;}
+  .table-head h3{font-size:15px;margin:0;font-weight:700;}
+  .search{border:1px solid var(--border);border-radius:9px;padding:7px 11px;font-size:13px;width:210px;outline:none;}
+  .search:focus{border-color:var(--blue);}
+  table{width:100%;border-collapse:collapse;}
+  th,td{text-align:right;padding:10px 14px;font-size:13.5px;border-bottom:1px solid #f0f1f3;white-space:nowrap;}
+  th:first-child,td:first-child{text-align:left;}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.02em;cursor:pointer;user-select:none;}
+  th.sortable:hover{color:var(--ink);}
+  th .arr{opacity:.5;font-size:10px;}
+  tr.acct{cursor:pointer;}
+  tr.acct:hover{background:#fafbfc;}
+  td.name{font-weight:600;}
+  .caret{display:inline-block;width:14px;color:var(--muted);transition:transform .15s;}
+  tr.acct.open .caret{transform:rotate(90deg);}
+  .chip{display:inline-block;font-weight:700;padding:2px 9px;border-radius:7px;font-size:12.5px;min-width:64px;text-align:center;}
+  .chip.g{background:var(--green-bg);color:var(--chip-green);}
+  .chip.y{background:var(--yellow-bg);color:var(--yellow);}
+  .chip.r{background:var(--red-bg);color:var(--red);}
+  .chip.n{background:#f1f3f5;color:var(--muted);}
+  .badge{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;}
+  .badge.aktiv{background:var(--green-bg);color:var(--chip-green);}
+  .badge.off{background:#f1f3f5;color:var(--muted);}
+  .camp-row td{background:#fbfcfd;border-bottom:1px solid #f0f1f3;}
+  .camp-tbl{width:100%;border-collapse:collapse;margin:2px 0;}
+  .camp-tbl td,.camp-tbl th{padding:7px 10px;font-size:12.5px;border-bottom:1px dashed #e9ebee;}
+  .camp-tbl th{font-size:11px;}
+  .camp-name{color:var(--ink);font-weight:500;}
+  .foot{grid-template-columns:1fr 1fr;}
+  @media(max-width:880px){.foot{grid-template-columns:1fr;}}
+  .foot .card{padding:14px 16px;}
+  .foot h3{font-size:14px;margin:0 0 8px;font-weight:700;}
+  .foot .list{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{background:#f1f3f5;color:var(--ink);font-size:12px;padding:3px 9px;border-radius:7px;}
+  .tag .r{color:var(--muted);}
+  .legend{color:var(--muted);font-size:12px;margin-top:6px;padding:0 2px;}
+  .err{padding:14px;color:var(--red);font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Meta Ads — Daglig rapport</h1>
+      <div class="sub" id="period">—</div>
+    </div>
+    <div class="upd">Sist oppdatert<br><b id="updated">—</b></div>
+  </header>
+
+  <div class="grid kpis" id="kpis"></div>
+
+  <section>
+    <div class="card flags">
+      <div class="section-title" style="padding:12px 14px 2px;">🔴 Handle på i dag</div>
+      <div id="flags"></div>
+    </div>
+  </section>
+
+  <section class="grid charts">
+    <div class="card chart-card"><h3>Spend per konto (siste 7 dager)</h3><div class="chart-box"><canvas id="spendChart"></canvas></div></div>
+    <div class="card chart-card"><h3>Kr/lead per konto — strek = mål</h3><div class="chart-box"><canvas id="cplChart"></canvas></div></div>
+  </section>
+
+  <section>
+    <div class="card table-card">
+      <div class="table-head">
+        <h3>Alle kontoer med aktivitet</h3>
+        <input class="search" id="search" placeholder="Søk konto…">
+      </div>
+      <table id="tbl">
+        <thead><tr>
+          <th class="sortable" data-k="name">Konto <span class="arr"></span></th>
+          <th class="sortable" data-k="spend">Spend <span class="arr">▼</span></th>
+          <th class="sortable" data-k="leads">Leads <span class="arr"></span></th>
+          <th class="sortable" data-k="kr_per_lead">Kr/lead <span class="arr"></span></th>
+          <th class="sortable" data-k="status">Status <span class="arr"></span></th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div class="legend">Klikk en rad for å se kampanjene. Kr/lead: <span class="pill g">grønn &lt; 200</span> <span class="pill y">gul 200–300</span> <span class="pill r">rød &gt; 300</span></div>
+    </div>
+  </section>
+
+  <section class="grid foot">
+    <div class="card"><h3 id="emptyTitle">Tomme / i dvale</h3><div class="list" id="empty"></div></div>
+    <div class="card"><h3 id="billTitle">💳 Betaling & tilgang</h3><div class="list" id="billing"></div></div>
+  </section>
+</div>
+
+<script>
+const FALLBACK = {
+  "updated":"2026-06-07","period":"31. mai – 6. juni 2026 (siste 7 dager)","target_kr_per_lead":300,
+  "counts":{"sporet":32,"hentet":16,"tomme_dvale":5,"billing_flagg":11},
+  "totals":{"NOK":{"spend":39334,"leads":242,"kr_per_lead":163,"aktive":13}},
+  "flags":[
+    {"level":"red","text":"Cranioklinikken — kr 700/lead (4,3× snittet). Klart dyrest, bør sees på."},
+    {"level":"red","text":"Klinikkflow (eget) — kr 367/lead, over mål."},
+    {"level":"red","text":"Frøyd — kr 365/lead, over mål (Microneedling-kampanjen drar opp: kr 625/lead)."},
+    {"level":"yellow","text":"Force of Beauty — pauset, men leverte 52 leads til kr 37/lead. Beste konto i porteføljen — vurder å skru på igjen."},
+    {"level":"yellow","text":"Bioplasmaklinikk — pauset, kr 505/lead."},
+    {"level":"yellow","text":"HarmoniAkupunktur — pauset, 0 leads."},
+    {"level":"billing","text":"8 kontoer i porteføljen ligger UNSETTLED (billing) — se nederst."}
+  ],
+  "accounts":[
+    {"name":"Medic Fot","id":"285328547260968","currency":"NOK","status":"aktiv","spend":10134.47,"leads":34,"kr_per_lead":298,"campaigns":[
+      {"name":"KF Leadform full time 549,-","status":"aktiv","spend":4166.15,"leads":20,"kr_per_lead":208,"ctr":"1.03%","cpc":11.35},
+      {"name":"Undersøkelse - ABO - NovVinnere","status":"aktiv","spend":2262.02,"leads":7,"kr_per_lead":323,"ctr":"1.42%","cpc":7.83},
+      {"name":"KF - Tannbleking + Undersøkelse","status":"aktiv","spend":2027.74,"leads":2,"kr_per_lead":1014,"ctr":"1.09%","cpc":12.92},
+      {"name":"KF - Landing page - 549,-","status":"aktiv","spend":1382.71,"leads":5,"kr_per_lead":277,"ctr":"1.06%","cpc":12.46},
+      {"name":"KF - Tannimplantat - V1","status":"off","spend":295.85,"leads":0,"kr_per_lead":null,"ctr":"2.33%","cpc":4.35}]},
+    {"name":"Frøyd","id":"310102620","currency":"NOK","status":"aktiv","spend":5108.61,"leads":14,"kr_per_lead":365,"campaigns":[
+      {"name":"Bio-Meso PDRN Glow (KF)","status":"aktiv","spend":3234.83,"leads":11,"kr_per_lead":294,"ctr":"2.75%","cpc":7.56},
+      {"name":"Microneedling superoffer (KF)","status":"aktiv","spend":1873.78,"leads":3,"kr_per_lead":625,"ctr":"2.53%","cpc":8.84}]},
+    {"name":"Klinikkflow (eget)","id":"4459528394274918","currency":"NOK","status":"aktiv","spend":3665.84,"leads":10,"kr_per_lead":367,"campaigns":[
+      {"name":"Klinikkflow - Gratis Strategisamtale","status":"aktiv","spend":3665.84,"leads":10,"kr_per_lead":367,"ctr":"2.45%","cpc":12.43}]},
+    {"name":"Cranioklinikken","id":"1418993789293324","currency":"NOK","status":"aktiv","spend":2800.00,"leads":4,"kr_per_lead":700,"campaigns":[
+      {"name":"[KF] KAMPANJE (Intro 890,-) Leads","status":"aktiv","spend":2800.00,"leads":4,"kr_per_lead":700,"ctr":"2.75%","cpc":7.31}]},
+    {"name":"Glow to Go","id":"1414745150338015","currency":"NOK","status":"aktiv","spend":2796.23,"leads":13,"kr_per_lead":215,"campaigns":[
+      {"name":"KF - Microneedling + LED - V3","status":"aktiv","spend":2796.23,"leads":13,"kr_per_lead":215,"ctr":"2.02%","cpc":8.22}]},
+    {"name":"Lillestrøm Tannhelse","id":"2480737008774788","currency":"NOK","status":"aktiv","spend":2148.82,"leads":40,"kr_per_lead":54,"campaigns":[
+      {"name":"Tannsjekk + Rens // 590,- // KF // v1","status":"aktiv","spend":1653.97,"leads":27,"kr_per_lead":61,"ctr":"4.51%","cpc":2.62},
+      {"name":"Implantat Konsultasjon v1 // GRATIS // KF","status":"aktiv","spend":494.85,"leads":13,"kr_per_lead":38,"ctr":"6.59%","cpc":1.79}]},
+    {"name":"Lumera Skin Clinic","id":"746360314757056","currency":"NOK","status":"aktiv","spend":2088.37,"leads":13,"kr_per_lead":161,"campaigns":[
+      {"name":"KF Profhilo v1","status":"aktiv","spend":2088.37,"leads":13,"kr_per_lead":161,"ctr":"3.31%","cpc":7.73}]},
+    {"name":"Bodyflow","id":"2104248957054228","currency":"NOK","status":"aktiv","spend":2026.77,"leads":17,"kr_per_lead":119,"campaigns":[
+      {"name":"KF Microneedling","status":"aktiv","spend":1027.16,"leads":13,"kr_per_lead":79,"ctr":"4.07%","cpc":4.67},
+      {"name":"EM Muskel Stim <KF> 599,-","status":"aktiv","spend":999.61,"leads":4,"kr_per_lead":250,"ctr":"3.15%","cpc":8.85}]},
+    {"name":"Force of Beauty","id":"942735161698278","currency":"NOK","status":"off","spend":1910.46,"leads":52,"kr_per_lead":37,"campaigns":[
+      {"name":"KF - HydraFacial","status":"off","spend":1910.46,"leads":52,"kr_per_lead":37,"ctr":"6.23%","cpc":1.65}]},
+    {"name":"Bioplasmaklinikk","id":"1803528443943666","currency":"NOK","status":"off","spend":1516.45,"leads":3,"kr_per_lead":505,"campaigns":[
+      {"name":"KF - Profhilo","status":"off","spend":1516.45,"leads":3,"kr_per_lead":505,"ctr":"4.28%","cpc":6.34}]},
+    {"name":"Storhamar Bil","id":"873090401637057","currency":"NOK","status":"aktiv","spend":1399.08,"leads":17,"kr_per_lead":82,"campaigns":[
+      {"name":"KF - Kommisjonssalg - V1","status":"aktiv","spend":1399.08,"leads":17,"kr_per_lead":82,"ctr":"2.58%","cpc":5.90}]},
+    {"name":"Bailine Arendal (annonse)","id":"1346163396433367","currency":"NOK","status":"aktiv","spend":1332.42,"leads":5,"kr_per_lead":266,"campaigns":[
+      {"name":"<KF> Figurforming introtime 450,-","status":"aktiv","spend":1332.42,"leads":5,"kr_per_lead":266,"ctr":"3.62%","cpc":3.61}]},
+    {"name":"Ake klinikk","id":"1657659812232896","currency":"NOK","status":"aktiv","spend":1201.23,"leads":16,"kr_per_lead":75,"campaigns":[
+      {"name":"Osmotherm 21. v1 // KF","status":"aktiv","spend":1201.23,"leads":16,"kr_per_lead":75,"ctr":"5.38%","cpc":2.73}]},
+    {"name":"Bailine hovedkontor","id":"797054139242362","currency":"NOK","status":"aktiv","spend":508.93,"leads":4,"kr_per_lead":127,"campaigns":[
+      {"name":"Nye Bailine klinikker-Juni 2026","status":"aktiv","spend":508.93,"leads":4,"kr_per_lead":127,"ctr":"5.07%","cpc":4.58}]},
+    {"name":"Omsorgsgruppen Øst","id":"2687347888130903","currency":"NOK","status":"aktiv","spend":461.31,"leads":null,"kr_per_lead":null,"note":"contact-objektiv","campaigns":[
+      {"name":"Ny Engasjement-kampanje","status":"aktiv","spend":461.31,"leads":null,"kr_per_lead":null,"ctr":"3.80%","cpc":2.65}]},
+    {"name":"HarmoniAkupunktur","id":"63680104","currency":"NOK","status":"off","spend":235.34,"leads":0,"kr_per_lead":null,"campaigns":[
+      {"name":"<KF> -- Harmoni Akupunktur (Kampanje 1)","status":"off","spend":235.34,"leads":0,"kr_per_lead":null,"ctr":"1.80%","cpc":5.74}]}
+  ],
+  "tomme_dvale":["Bailine Stavanger","My skin klinikk","Vekst & Balanse","Tannboden Brønnøysund","Klinikk Tønsberg"],
+  "billing":[
+    {"name":"Ro Massasje","reason":"UNSETTLED"},{"name":"Nurdent","reason":"UNSETTLED"},
+    {"name":"Joachim Majambere","reason":"UNSETTLED"},{"name":"Serene By Design","reason":"UNSETTLED"},
+    {"name":"Medic Fot Stokke","reason":"mangler betalingsmåte"},{"name":"DC Wholesale","reason":"mangler betalingsmåte"},
+    {"name":"(uten navn) 637967305134171","reason":"mangler betalingsmåte"},
+    {"name":"Elora klinikken","reason":"MCP-utrulling"},{"name":"Pimentel","reason":"MCP-utrulling"},
+    {"name":"Bailine Arendal (USD)","reason":"MCP-utrulling"},{"name":"(uten navn) 35409629","reason":"MCP-utrulling"}
+  ]
+};
+const kr = n => "kr " + Math.round(n).toLocaleString("nb-NO");
+const cplClass = v => v==null ? "n" : v<200 ? "g" : v<=300 ? "y" : "r";
+
+let DATA, sortKey="spend", sortDir=-1;
+
+function kpiCard(lbl, val, sub, cls){
+  return `<div class="card kpi ${cls||''}"><div class="lbl">${lbl}</div><div class="val">${val}</div><div class="delta">${sub||''}</div></div>`;
+}
+function render(){
+  document.getElementById("period").textContent = DATA.period;
+  document.getElementById("updated").textContent = DATA.updated;
+  const t = DATA.totals.NOK, tgt = DATA.target_kr_per_lead;
+  const cplCls = t.kr_per_lead < tgt ? "good" : "bad";
+  document.getElementById("kpis").innerHTML =
+    kpiCard("Spend (NOK)", kr(t.spend), DATA.counts.hentet+" kontoer med data", "good")
+    + kpiCard("Leads", t.leads.toLocaleString("nb-NO"), "lead-objektiv siste 7 dager", "good")
+    + kpiCard("Snitt kr/lead", kr(t.kr_per_lead), "mål "+kr(tgt), cplCls)
+    + kpiCard("Aktive kontoer", t.aktive, DATA.counts.sporet+" sporet totalt");
+
+  document.getElementById("flags").innerHTML = DATA.flags.map(f=>{
+    const c = f.level==="red"?"red":f.level==="yellow"?"yellow":"billing";
+    return `<div class="flag ${c}"><span class="dot"></span><span class="txt">${f.text}</span></div>`;
+  }).join("");
+
+  // footer
+  document.getElementById("emptyTitle").textContent = `Tomme / i dvale (${DATA.tomme_dvale.length})`;
+  document.getElementById("empty").innerHTML = DATA.tomme_dvale.map(n=>`<span class="tag">${n}</span>`).join("");
+  document.getElementById("billTitle").textContent = `💳 Betaling & tilgang (${DATA.billing.length})`;
+  document.getElementById("billing").innerHTML = DATA.billing.map(b=>`<span class="tag">${b.name} <span class="r">· ${b.reason}</span></span>`).join("");
+
+  renderTable();
+  renderCharts();
+}
+
+function renderTable(){
+  const q = (document.getElementById("search").value||"").toLowerCase();
+  let rows = DATA.accounts.filter(a=>a.name.toLowerCase().includes(q));
+  rows.sort((a,b)=>{
+    let x=a[sortKey], y=b[sortKey];
+    if(sortKey==="name"||sortKey==="status"){x=(x||"").toString();y=(y||"").toString();return x.localeCompare(y)*sortDir;}
+    x=x==null?-1:x; y=y==null?-1:y; return (x-y)*sortDir;
+  });
+  const tb = document.getElementById("tbody");
+  tb.innerHTML = rows.map((a,i)=>{
+    const cpl = a.kr_per_lead==null ? (a.note?`<span class="chip n">–</span>`:`<span class="chip n">–</span>`) : `<span class="chip ${cplClass(a.kr_per_lead)}">${kr(a.kr_per_lead)}</span>`;
+    const leads = a.leads==null?'<span style="color:var(--muted)">–</span>':a.leads;
+    const camps = `<tr class="camp-row" data-for="${a.id}" style="display:none"><td colspan="5">
+      <table class="camp-tbl"><thead><tr><th style="text-align:left">Kampanje</th><th>Spend</th><th>Leads</th><th>Kr/lead</th><th>CTR</th><th>CPC</th></tr></thead>
+      <tbody>${a.campaigns.map(c=>`<tr>
+        <td class="camp-name" style="text-align:left">${c.name} ${c.status==='off'?'<span class="badge off">Pauset</span>':''}</td>
+        <td>${kr(c.spend)}</td><td>${c.leads==null?'–':c.leads}</td>
+        <td>${c.kr_per_lead==null?'–':kr(c.kr_per_lead)}</td><td>${c.ctr||'–'}</td><td>${c.cpc?kr(c.cpc):'–'}</td>
+      </tr>`).join("")}</tbody></table></td></tr>`;
+    return `<tr class="acct" data-id="${a.id}">
+        <td class="name"><span class="caret">▸</span> ${a.name}${a.note?` <span style="color:var(--muted);font-weight:400;font-size:12px">(${a.note})</span>`:''}</td>
+        <td>${kr(a.spend)}</td><td>${leads}</td><td>${cpl}</td>
+        <td><span class="badge ${a.status}">${a.status==='aktiv'?'Aktiv':'Pauset'}</span></td>
+      </tr>${camps}`;
+  }).join("");
+  tb.querySelectorAll("tr.acct").forEach(r=>r.addEventListener("click",()=>{
+    const id=r.dataset.id; const c=tb.querySelector(`tr.camp-row[data-for="${id}"]`);
+    const open = c.style.display!=="none"; c.style.display=open?"none":""; r.classList.toggle("open",!open);
+  }));
+  document.querySelectorAll("th .arr").forEach(s=>s.textContent="");
+  const th=document.querySelector(`th[data-k="${sortKey}"] .arr`); if(th) th.textContent = sortDir<0?"▼":"▲";
+}
+
+let spendC, cplC;
+function renderCharts(){
+  const a=[...DATA.accounts].filter(x=>x.spend>0).sort((p,q)=>q.spend-p.spend);
+  const labels=a.map(x=>x.name);
+  if(spendC) spendC.destroy();
+  spendC=new Chart(document.getElementById("spendChart"),{type:"bar",
+    data:{labels,datasets:[{data:a.map(x=>x.spend),backgroundColor:"#16a34a",borderRadius:5,barThickness:14}]},
+    options:{indexAxis:"y",plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>kr(c.raw)}}},
+      scales:{x:{grid:{color:"#f0f1f3"},ticks:{callback:v=>kr(v)}},y:{grid:{display:false},ticks:{font:{size:11}}}}}});
+  const b=[...DATA.accounts].filter(x=>x.kr_per_lead!=null).sort((p,q)=>q.kr_per_lead-p.kr_per_lead);
+  const tgt=DATA.target_kr_per_lead;
+  if(cplC) cplC.destroy();
+  cplC=new Chart(document.getElementById("cplChart"),{type:"bar",
+    data:{labels:b.map(x=>x.name),datasets:[{data:b.map(x=>x.kr_per_lead),
+      backgroundColor:b.map(x=>x.kr_per_lead<200?"#16a34a":x.kr_per_lead<=300?"#d97706":"#dc2626"),borderRadius:5,barThickness:14}]},
+    options:{indexAxis:"y",plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>kr(c.raw)+" / lead"}}},
+      scales:{x:{grid:{color:"#f0f1f3"},ticks:{callback:v=>kr(v)}},y:{grid:{display:false},ticks:{font:{size:11}}}}},
+    plugins:[{id:"tgtline",afterDraw(ch){const x=ch.scales.x.getPixelForValue(tgt);const a=ch.chartArea;
+      const ctx=ch.ctx;ctx.save();ctx.strokeStyle="#111827";ctx.setLineDash([4,4]);ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.moveTo(x,a.top);ctx.lineTo(x,a.bottom);ctx.stroke();
+      ctx.fillStyle="#111827";ctx.font="11px Inter";ctx.fillText("mål "+kr(tgt),x+4,a.top+12);ctx.restore();}}]});
+}
+
+document.getElementById("search").addEventListener("input",renderTable);
+document.querySelectorAll("th.sortable").forEach(th=>th.addEventListener("click",()=>{
+  const k=th.dataset.k; if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir = (k==="name")?1:-1;} renderTable();
+}));
+
+// Last data.json hvis hostet, ellers bruk innebygd
+fetch("data.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{DATA=d;render();})
+  .catch(()=>{DATA=FALLBACK;render();});
+</script>
+</body>
+</html>
