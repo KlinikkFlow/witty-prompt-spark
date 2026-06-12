@@ -302,8 +302,12 @@ document.querySelectorAll("th.sortable").forEach(th=>th.addEventListener("click"
   const k=th.dataset.k; if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir = (k==="name")?1:-1;} renderTable();
 }));
 
-// Last data.json hvis hostet, ellers bruk innebygd
-fetch("data.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{DATA=d;render();})
+// Hent ferskeste data rett fra GitHub (oppdateres daglig uten re-deploy).
+// Fallback 1: lokal data.json fra deployen. Fallback 2: innebygd snapshot.
+const RAW="https://raw.githubusercontent.com/KlinikkFlow/witty-prompt-spark/main/public/data.json";
+fetch(RAW+"?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject())
+  .catch(()=>fetch("data.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()))
+  .then(d=>{DATA=d;render();})
   .catch(()=>{DATA=FALLBACK;render();});
 </script>
 </body>
