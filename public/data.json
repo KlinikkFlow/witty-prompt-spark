@@ -1,53 +1,57 @@
 {
-  "updated": "2026-06-13",
-  "period": "6.–12. juni 2026 (siste 7 dager)",
+  "updated": "2026-06-14",
+  "period": "7.–13. juni 2026 (siste 7 dager)",
   "target_kr_per_lead": 300,
   "counts": {
     "sporet": 32,
-    "hentet": 24,
+    "hentet": 23,
     "tomme_dvale": 6,
-    "billing_flagg": 8
+    "billing_flagg": 9
   },
   "totals": {
     "NOK": {
-      "spend": 40800.65,
-      "leads": 166,
-      "kr_per_lead": 243.04,
+      "spend": 44717.4,
+      "leads": 206,
+      "kr_per_lead": 217.07,
       "aktive": 15
     }
   },
   "flags": [
     {
       "level": "red",
-      "text": "Lillestrøm Tannhelse — kr/lead kr 1054 (>2× snitt 805). kr 9488 brukt, kun 9 leads."
+      "text": "Lillestrøm Tannhelse — kr/lead kr 3361 (>2× snitt). kr 10 082 brukt, kun 3 leads (ned fra 9 i går). ⚠️ Forverret kraftig."
     },
     {
       "level": "red",
-      "text": "Klinikkflow — kr/lead kr 906 (>2× snitt). kr 5436 brukt, 6 leads."
+      "text": "Cranioklinikkens — kr/lead kr 700 (>mål 300). kr 2800 brukt, 4 leads."
     },
     {
       "level": "red",
-      "text": "Cranioklinikkens — kr/lead kr 906 (>2× snitt). kr 2718 brukt, 3 leads."
+      "text": "Klinikkflow — kr/lead kr 700 (>mål 300). kr 5600 brukt, 8 leads."
     },
     {
       "level": "red",
-      "text": "Frøyd — kr/lead kr 513 (>mål 300). kr 4620 brukt, 9 leads."
+      "text": "Frøyd — kr/lead kr 482 (>mål 300). kr 4817 brukt, 10 leads."
     },
     {
       "level": "red",
-      "text": "Bailine hk — alle kampanjer PAUSET (kr 1802 spend i perioden)."
+      "text": "Bailine hk — alle kampanjer PAUSET (kr 1683 spend i perioden)."
     },
     {
       "level": "yellow",
-      "text": "Ake klinikk — kr 627 spend, 0 leads (>500 uten konvertering)."
+      "text": "DC Wholesale (Dui Clinique) — kr 1079 spend, 0 leads."
     },
     {
       "level": "yellow",
-      "text": "Bailine Arendal annonsekonto — alle kampanjer PAUSET."
+      "text": "Bailine Stavanger — kr 519 spend, 0 leads."
     },
     {
       "level": "yellow",
-      "text": "Bioplasmaklinikk — alle kampanjer PAUSET."
+      "text": "Bailine Arendal annonsekonto — alle kampanjer PAUSET (kr 744 spend)."
+    },
+    {
+      "level": "billing",
+      "text": "Serene By Design — UNSETTLED (var aktiv i går: kr 1002 / 12 leads)."
     },
     {
       "level": "billing",
@@ -60,10 +64,6 @@
     {
       "level": "billing",
       "text": "Medic Fot Stokke — mangler betalingsmåte."
-    },
-    {
-      "level": "billing",
-      "text": "(ingen navn) #637967305134171 — mangler betalingsmåte."
     }
   ],
   "accounts": [
@@ -72,46 +72,45 @@
       "id": "2480737008774788",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 9488.17,
-      "leads": 9,
-      "kr_per_lead": 1054.24,
-      "note": "🔴 >2× snitt — alle 4 kampanjer over kr 300/lead",
+      "spend": 10081.65,
+      "leads": 3,
+      "note": "🔴 >2× snitt — leads falt 9→3, spend opp",
       "campaigns": [
         {
           "name": "KF - Landing page - 549,-",
           "status": "aktiv",
-          "spend": 5939.31,
-          "leads": 5,
-          "kr_per_lead": 1187.86,
-          "ctr": "2.22%",
-          "cpc": 6.25
+          "spend": 6581.96,
+          "leads": 1,
+          "kr_per_lead": 6581.96,
+          "ctr": "3.86%",
+          "cpc": 3.63
         },
         {
           "name": "KF - Tannbleking + Undersøkelse",
           "status": "aktiv",
-          "spend": 2141.83,
-          "leads": 1,
-          "kr_per_lead": 2141.83,
-          "ctr": "0.77%",
-          "cpc": 17.0
-        },
-        {
-          "name": "Undersøkelse - ABO - NovVinnere – Ny tekster",
-          "status": "aktiv",
-          "spend": 717.88,
-          "leads": 1,
-          "kr_per_lead": 717.88,
-          "ctr": "1.93%",
-          "cpc": 6.84
+          "spend": 2099.96,
+          "leads": 0,
+          "kr_per_lead": null,
+          "ctr": "0.71%",
+          "cpc": 18.26
         },
         {
           "name": "<KF> Leadform full time 549,-",
           "status": "aktiv",
-          "spend": 689.15,
-          "leads": 2,
-          "kr_per_lead": 344.58,
-          "ctr": "1.07%",
-          "cpc": 11.49
+          "spend": 699.96,
+          "leads": 1,
+          "kr_per_lead": 699.96,
+          "ctr": "0.84%",
+          "cpc": 14.89
+        },
+        {
+          "name": "Undersøkelse - ABO - NovVinnere",
+          "status": "aktiv",
+          "spend": 699.77,
+          "leads": 1,
+          "kr_per_lead": 699.77,
+          "ctr": "1.84%",
+          "cpc": 7.14
         }
       ]
     },
@@ -120,19 +119,18 @@
       "id": "4459528394274918",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 5436.44,
-      "leads": 6,
-      "kr_per_lead": 906.07,
-      "note": "🔴 >2× snitt — Strategisamtale-kampanje underperformer",
+      "spend": 5600.0,
+      "leads": 8,
+      "note": "🔴 kr/lead over mål",
       "campaigns": [
         {
           "name": "Klinikkflow - Gratis Strategisamtale",
           "status": "aktiv",
-          "spend": 5436.44,
-          "leads": 6,
-          "kr_per_lead": 906.07,
-          "ctr": "2.16%",
-          "cpc": 12.22
+          "spend": 5600.0,
+          "leads": 8,
+          "kr_per_lead": 700.0,
+          "ctr": "2.08%",
+          "cpc": 12.56
         }
       ]
     },
@@ -141,28 +139,27 @@
       "id": "310102620",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 4620.26,
-      "leads": 9,
-      "kr_per_lead": 513.36,
-      "note": "🔴 >mål kr 300 — begge kampanjer over mål",
+      "spend": 4817.06,
+      "leads": 10,
+      "note": "🔴 kr/lead over mål",
       "campaigns": [
         {
           "name": "Microneedling superoffer (KF)",
           "status": "aktiv",
-          "spend": 3020.43,
+          "spend": 3149.8,
           "leads": 5,
-          "kr_per_lead": 604.09,
-          "ctr": "2.40%",
-          "cpc": 10.1
+          "kr_per_lead": 629.96,
+          "ctr": "2.41%",
+          "cpc": 10.29
         },
         {
           "name": "Bio-Meso PDRN Glow (KF)",
           "status": "aktiv",
-          "spend": 1599.83,
-          "leads": 4,
-          "kr_per_lead": 399.96,
+          "spend": 1667.26,
+          "leads": 5,
+          "kr_per_lead": 333.45,
           "ctr": "2.44%",
-          "cpc": 7.34
+          "cpc": 7.54
         }
       ]
     },
@@ -171,27 +168,27 @@
       "id": "1100257754481402",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 3256.09,
-      "leads": 42,
-      "kr_per_lead": 77.52,
+      "spend": 3500.0,
+      "leads": 44,
+      "note": "",
       "campaigns": [
         {
-          "name": "Tannsjekk + Rens // 590,- // KF // v1",
+          "name": "Tannsjekk + Rens // 590,-",
           "status": "aktiv",
-          "spend": 1946.87,
-          "leads": 23,
-          "kr_per_lead": 84.65,
-          "ctr": "2.53%",
-          "cpc": 4.2
+          "spend": 2100.0,
+          "leads": 30,
+          "kr_per_lead": 70.0,
+          "ctr": "2.34%",
+          "cpc": 4.6
         },
         {
-          "name": "Implantat Konsultasjon v1 // GRATIS // KF",
+          "name": "Implantat Konsultasjon // GRATIS",
           "status": "aktiv",
-          "spend": 1309.22,
-          "leads": 19,
-          "kr_per_lead": 68.91,
-          "ctr": "4.36%",
-          "cpc": 2.64
+          "spend": 1400.0,
+          "leads": 14,
+          "kr_per_lead": 100.0,
+          "ctr": "3.83%",
+          "cpc": 3.12
         }
       ]
     },
@@ -200,48 +197,27 @@
       "id": "1414745150338015",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 2765.09,
+      "spend": 2800.0,
       "leads": 29,
-      "kr_per_lead": 95.35,
-      "note": "Mixed: én kampanje (Ejal ny) har link_click-objektiv, ikke lead",
+      "note": "Ejal ny er trafikk-kampanje (link_click)",
       "campaigns": [
         {
           "name": "KF - Skinbooster Ejal40",
           "status": "aktiv",
-          "spend": 2063.99,
+          "spend": 2100.0,
           "leads": 29,
-          "kr_per_lead": 71.17,
-          "ctr": "3.79%",
+          "kr_per_lead": 72.41,
+          "ctr": "3.84%",
           "cpc": 4.72
         },
         {
-          "name": "Ejal ny",
+          "name": "Ejal ny (trafikk)",
           "status": "aktiv",
-          "spend": 701.1,
+          "spend": 700.0,
           "leads": null,
           "kr_per_lead": null,
-          "ctr": "1.91%",
-          "cpc": 2.13
-        }
-      ]
-    },
-    {
-      "name": "My skin klinikk",
-      "id": "1767124990772163",
-      "currency": "NOK",
-      "status": "aktiv",
-      "spend": 2757.34,
-      "leads": 14,
-      "kr_per_lead": 196.95,
-      "campaigns": [
-        {
-          "name": "KF - Microneedling + LED - V3",
-          "status": "aktiv",
-          "spend": 2757.34,
-          "leads": 14,
-          "kr_per_lead": 196.95,
-          "ctr": "1.96%",
-          "cpc": 8.54
+          "ctr": "2.02%",
+          "cpc": 2.05
         }
       ]
     },
@@ -250,39 +226,38 @@
       "id": "1418993789293324",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 2718.02,
-      "leads": 3,
-      "kr_per_lead": 906.01,
-      "note": "🔴 >2× snitt — Intro-kampanje svært høy kr/lead",
+      "spend": 2800.0,
+      "leads": 4,
+      "note": "🔴 kr/lead over mål",
       "campaigns": [
         {
           "name": "[KF] KAMPANJE (Intro 890,-) Leads",
           "status": "aktiv",
-          "spend": 2718.02,
-          "leads": 3,
-          "kr_per_lead": 906.01,
-          "ctr": "3.17%",
-          "cpc": 5.96
+          "spend": 2800.0,
+          "leads": 4,
+          "kr_per_lead": 700.0,
+          "ctr": "3.18%",
+          "cpc": 6.14
         }
       ]
     },
     {
-      "name": "Lumera Skin Clinic",
-      "id": "746360314757056",
+      "name": "My skin klinikk",
+      "id": "1767124990772163",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 2055.65,
-      "leads": 11,
-      "kr_per_lead": 186.88,
+      "spend": 2799.99,
+      "leads": 17,
+      "note": "",
       "campaigns": [
         {
-          "name": "KF Profhilo v1",
+          "name": "KF - Microneedling + LED - V3",
           "status": "aktiv",
-          "spend": 2055.65,
-          "leads": 11,
-          "kr_per_lead": 186.88,
-          "ctr": "2.76%",
-          "cpc": 9.14
+          "spend": 2799.99,
+          "leads": 17,
+          "kr_per_lead": 164.71,
+          "ctr": "2.03%",
+          "cpc": 8.16
         }
       ]
     },
@@ -291,89 +266,18 @@
       "id": "873090401637057",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 2054.18,
-      "leads": 18,
-      "kr_per_lead": 114.12,
+      "spend": 2304.98,
+      "leads": 17,
+      "note": "",
       "campaigns": [
         {
           "name": "KF - Kommisjonssalg - V1",
           "status": "aktiv",
-          "spend": 2054.18,
-          "leads": 18,
-          "kr_per_lead": 114.12,
-          "ctr": "2.43%",
-          "cpc": 5.39
-        }
-      ]
-    },
-    {
-      "name": "Bailine hk",
-      "id": "797054139242362",
-      "currency": "NOK",
-      "status": "off",
-      "spend": 1802.04,
-      "leads": 5,
-      "kr_per_lead": 360.41,
-      "note": "🔴 Alle kampanjer PAUSET — kr/lead >mål 300",
-      "campaigns": [
-        {
-          "name": "Nye Bailine klinikker-Juni 2026",
-          "status": "off",
-          "spend": 1802.04,
-          "leads": 5,
-          "kr_per_lead": 360.41,
-          "ctr": "2.89%",
-          "cpc": 7.15
-        }
-      ]
-    },
-    {
-      "name": "Serene By Design",
-      "id": "917078334650124",
-      "currency": "NOK",
-      "status": "aktiv",
-      "spend": 1002.32,
-      "leads": 12,
-      "kr_per_lead": 83.53,
-      "campaigns": [
-        {
-          "name": "KF - PDRN Microneedling",
-          "status": "aktiv",
-          "spend": 902.55,
-          "leads": 12,
-          "kr_per_lead": 75.21,
-          "ctr": "3.96%",
-          "cpc": 3.31
-        },
-        {
-          "name": "KF - Profhilo",
-          "status": "off",
-          "spend": 99.77,
-          "leads": 0,
-          "kr_per_lead": null,
-          "ctr": "5.65%",
-          "cpc": 4.34
-        }
-      ]
-    },
-    {
-      "name": "Bailine Arendal annonsekonto",
-      "id": "1346163396433367",
-      "currency": "NOK",
-      "status": "off",
-      "spend": 860.41,
-      "leads": 7,
-      "kr_per_lead": 122.92,
-      "note": "🟡 Alle kampanjer PAUSET",
-      "campaigns": [
-        {
-          "name": "<KF> Figurforming introtime 450,-",
-          "status": "off",
-          "spend": 860.41,
-          "leads": 7,
-          "kr_per_lead": 122.92,
-          "ctr": "4.09%",
-          "cpc": 3.21
+          "spend": 2304.98,
+          "leads": 17,
+          "kr_per_lead": 135.59,
+          "ctr": "2.40%",
+          "cpc": 5.57
         }
       ]
     },
@@ -382,89 +286,118 @@
       "id": "1657659812232896",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 626.72,
+      "spend": 2099.9,
+      "leads": 38,
+      "note": "🟢 Snudd fra 0→38 leads vs i går",
+      "campaigns": [
+        {
+          "name": "Osmotherm 21. v1 // KF",
+          "status": "aktiv",
+          "spend": 2099.9,
+          "leads": 38,
+          "kr_per_lead": 55.26,
+          "ctr": "5.78%",
+          "cpc": 2.64
+        }
+      ]
+    },
+    {
+      "name": "Lumera Skin Clinic",
+      "id": "746360314757056",
+      "currency": "NOK",
+      "status": "aktiv",
+      "spend": 2099.84,
+      "leads": 12,
+      "note": "",
+      "campaigns": [
+        {
+          "name": "KF Profhilo v1",
+          "status": "aktiv",
+          "spend": 2099.84,
+          "leads": 12,
+          "kr_per_lead": 174.99,
+          "ctr": "2.85%",
+          "cpc": 8.75
+        }
+      ]
+    },
+    {
+      "name": "Bailine hk",
+      "id": "797054139242362",
+      "currency": "NOK",
+      "status": "off",
+      "spend": 1682.71,
+      "leads": 3,
+      "note": "🔴 Alle kampanjer PAUSET",
+      "campaigns": [
+        {
+          "name": "Nye Bailine klinikker-Juni 2026",
+          "status": "off",
+          "spend": 1682.71,
+          "leads": 3,
+          "kr_per_lead": 560.9,
+          "ctr": "2.81%",
+          "cpc": 7.38
+        }
+      ]
+    },
+    {
+      "name": "DC Wholesale (Dui Clinique)",
+      "id": "1644801020074445",
+      "currency": "NOK",
+      "status": "aktiv",
+      "spend": 1079.1,
       "leads": 0,
-      "kr_per_lead": null,
-      "note": "🟡 >kr 500 spend uten leads",
+      "note": "🟡 Spend uten leads",
       "campaigns": [
         {
           "name": "DEP // KF",
           "status": "aktiv",
-          "spend": 626.72,
+          "spend": 1079.1,
           "leads": 0,
           "kr_per_lead": null,
+          "ctr": "4.09%",
+          "cpc": 7.65
+        }
+      ]
+    },
+    {
+      "name": "Bioplasmaklinikk",
+      "id": "1803528443943666",
+      "currency": "NOK",
+      "status": "aktiv",
+      "spend": 1046.72,
+      "leads": 13,
+      "note": "🟢 Reaktivert (kr 64→1047, 0→13 leads)",
+      "campaigns": [
+        {
+          "name": "KF - PDRN Microneedling",
+          "status": "aktiv",
+          "spend": 1046.72,
+          "leads": 13,
+          "kr_per_lead": 80.52,
+          "ctr": "3.91%",
+          "cpc": 3.42
+        }
+      ]
+    },
+    {
+      "name": "Bailine Arendal annonsekonto",
+      "id": "1346163396433367",
+      "currency": "NOK",
+      "status": "off",
+      "spend": 744.41,
+      "leads": 7,
+      "note": "🟡 Alle kampanjer PAUSET",
+      "campaigns": [
+        {
+          "name": "<KF> Figurforming introtime 450,-",
+          "status": "off",
+          "spend": 744.41,
+          "leads": 7,
+          "kr_per_lead": 106.34,
           "ctr": "4.08%",
-          "cpc": 6.81
-        }
-      ]
-    },
-    {
-      "name": "Omsorgsgruppen Øst",
-      "id": "2687347888130903",
-      "currency": "NOK",
-      "status": "aktiv",
-      "spend": 455.85,
-      "leads": null,
-      "kr_per_lead": null,
-      "note": "Ikke lead-objektiv (contact_website)",
-      "campaigns": [
-        {
-          "name": "Ny Engasjement-kampanje",
-          "status": "aktiv",
-          "spend": 455.85,
-          "leads": null,
-          "kr_per_lead": null,
-          "ctr": "3.15%",
-          "cpc": 3.21
-        }
-      ]
-    },
-    {
-      "name": "DC Wholesale",
-      "id": "1644801020074445",
-      "currency": "NOK",
-      "status": "aktiv",
-      "spend": 372.11,
-      "leads": 0,
-      "kr_per_lead": null,
-      "campaigns": [
-        {
-          "name": "KF // VAT v2",
-          "status": "aktiv",
-          "spend": 372.11,
-          "leads": 0,
-          "kr_per_lead": null,
-          "ctr": "5.46%",
-          "cpc": 3.0
-        }
-      ]
-    },
-    {
-      "name": "Bodyflow Ad Account 2",
-      "id": "2104248957054228",
-      "currency": "NOK",
-      "status": "aktiv",
-      "spend": 291.88,
-      "leads": 1,
-      "kr_per_lead": 291.88,
-      "campaigns": [
-        {
-          "name": "EM Muskel Stim <KF> 599,-",
-          "status": "aktiv",
-          "spend": 149.04,
-          "leads": 0,
-          "kr_per_lead": null,
-          "ctr": "3.87%",
-          "cpc": 5.73
-        },
-        {
-          "name": "KF Microneedling",
-          "status": "aktiv",
-          "spend": 142.84,
-          "leads": 1,
-          "kr_per_lead": 142.84,
-          "ctr": "5.35%",
-          "cpc": 3.11
+          "cpc": 3.26
         }
       ]
     },
@@ -473,39 +406,67 @@
       "id": "26246499",
       "currency": "NOK",
       "status": "aktiv",
-      "spend": 174.56,
+      "spend": 519.3,
       "leads": 0,
-      "kr_per_lead": null,
+      "note": "🟡 Spend uten leads",
       "campaigns": [
         {
           "name": "KF - Bailine Stavanger v1",
           "status": "aktiv",
-          "spend": 174.56,
+          "spend": 519.3,
           "leads": 0,
           "kr_per_lead": null,
-          "ctr": "4.42%",
-          "cpc": 3.71
+          "ctr": "5.52%",
+          "cpc": 2.92
         }
       ]
     },
     {
-      "name": "Bioplasmaklinikk",
-      "id": "1803528443943666",
+      "name": "Omsorgsgruppen Øst",
+      "id": "2687347888130903",
       "currency": "NOK",
-      "status": "off",
-      "spend": 63.52,
-      "leads": 0,
-      "kr_per_lead": null,
-      "note": "🟡 Alle kampanjer PAUSET",
+      "status": "aktiv",
+      "spend": 461.93,
+      "leads": null,
+      "note": "Mål=contact_website (ikke lead-objektiv)",
       "campaigns": [
         {
-          "name": "KF - HydraFacial",
-          "status": "off",
-          "spend": 63.52,
+          "name": "Ny Engasjement-kampanje",
+          "status": "aktiv",
+          "spend": 461.93,
+          "leads": null,
+          "kr_per_lead": null,
+          "ctr": "3.04%",
+          "cpc": 3.37
+        }
+      ]
+    },
+    {
+      "name": "Bodyflow Ad Account 2",
+      "id": "2104248957054228",
+      "currency": "NOK",
+      "status": "aktiv",
+      "spend": 279.81,
+      "leads": 1,
+      "note": "",
+      "campaigns": [
+        {
+          "name": "KF Microneedling",
+          "status": "aktiv",
+          "spend": 139.92,
+          "leads": 1,
+          "kr_per_lead": 139.92,
+          "ctr": "5.58%",
+          "cpc": 3.04
+        },
+        {
+          "name": "EM Muskel Stim <KF> 599,-",
+          "status": "aktiv",
+          "spend": 139.89,
           "leads": 0,
           "kr_per_lead": null,
-          "ctr": "4.24%",
-          "cpc": 2.89
+          "ctr": "3.97%",
+          "cpc": 5.83
         }
       ]
     }
@@ -515,7 +476,7 @@
     "Vekst & Balanse Klinikken",
     "Medic Fot Annonsekonto",
     "Joachim Majambere",
-    "Klinikk Tønsberg",
+    "Klinikk Tønsberg (Linda Rasmussen)",
     "Force of Beauty"
   ],
   "billing": [
@@ -524,7 +485,11 @@
       "reason": "UNSETTLED"
     },
     {
-      "name": "Nurdent Lillestrøm",
+      "name": "Nurdent",
+      "reason": "UNSETTLED"
+    },
+    {
+      "name": "Serene By Design",
       "reason": "UNSETTLED"
     },
     {
@@ -536,19 +501,19 @@
       "reason": "mangler betalingsmåte"
     },
     {
+      "name": "Pimentel AS",
+      "reason": "MCP-utrulling"
+    },
+    {
       "name": "Elora klinikken",
       "reason": "MCP-utrulling"
     },
     {
-      "name": "Bailine Arendal (USD)",
+      "name": "Bailine Arendal #565271827162256",
       "reason": "MCP-utrulling"
     },
     {
       "name": "(ingen navn) #35409629",
-      "reason": "MCP-utrulling"
-    },
-    {
-      "name": "Pimentel AS",
       "reason": "MCP-utrulling"
     }
   ]
