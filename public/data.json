@@ -1,534 +1,117 @@
 {
- "updated": "2026-07-18",
- "period": "11.-17. juli 2026 (siste 7 dager)",
+ "updated": "2026-07-19",
+ "period": "12.-18. juli 2026 (siste 7 dager)",
  "target_kr_per_lead": 300,
- "counts": {
-  "sporet": 41,
-  "hentet": 30,
-  "tomme_dvale": 13,
-  "billing_flagg": 11
- },
+ "counts": {"sporet": 41, "hentet": 30, "tomme_dvale": 13, "billing_flagg": 11},
  "totals": {
-  "NOK": {
-   "spend": 37656.72,
-   "leads": 201,
-   "kr_per_lead": 187.35,
-   "aktive": 16
-  },
-  "SEK": {
-   "spend": 1897.79,
-   "leads": 0,
-   "kr_per_lead": null,
-   "aktive": 1
-  }
+  "NOK": {"spend": 37486.72, "leads": 204, "kr_per_lead": 183.76, "aktive": 16},
+  "SEK": {"spend": 2106.4, "leads": 0, "kr_per_lead": null, "aktive": 1}
  },
  "flags": [
-  {
-   "level": "red",
-   "text": "Klinikkflow annonsekonto: kr 540/lead (mal kr 300) - KF Sweden Campaign drar snittet, cpc kr 14,64"
-  },
-  {
-   "level": "red",
-   "text": "Ynde Hudhelse: kr 460/lead - kun 5 leads pa kr 2 302 spend, mest pauset"
-  },
-  {
-   "level": "yellow",
-   "text": "Bodyflow: kr 1 147 spend, 0 leads (EM Muskel Stim aktiv, cpc kr 12,60)"
-  },
-  {
-   "level": "yellow",
-   "text": "Joachim Majambere: kr 1 056 spend, 0 leads (KF Direkte til booking)"
-  },
-  {
-   "level": "billing",
-   "text": "11 kontoer med betaling/tilgang-flagg - se billing-liste"
-  }
+  {"level": "red", "text": "Klinikkflow annonsekonto: kr 478/lead (mal kr 300) - KF Sweden Campaign kr 440/lead, cpc kr 14,16. Bedring fra kr 540 i gar"},
+  {"level": "red", "text": "Ynde Hudhelse: kr 424/lead - 5 leads pa kr 2 121 spend. Kun Dermapen 2.0 aktiv (kr 155/lead), resten pauset"},
+  {"level": "red", "text": "Tannboden: Implantat Konsultasjon kr 700/lead pa kr 1 399 spend - eneste aktive kampanje"},
+  {"level": "yellow", "text": "Bodyflow: kr 1 399 spend, 0 leads (EM Muskel Stim aktiv, cpc kr 13,86) - andre dag pa rad uten leads"},
+  {"level": "yellow", "text": "Frisor Silva (SEK): KF - Slingor kampanje SEK 953, 0 leads"},
+  {"level": "yellow", "text": "Joachim Majambere: kr 1 050 spend, leads ukjent (pixel-lead uten rapportert verdi)"},
+  {"level": "yellow", "text": "House of Vitality: kr 452/lead pa 1 lead - lavt volum, folg opp"},
+  {"level": "billing", "text": "11 kontoer med betaling/tilgang-flagg - se billing-liste"}
  ],
  "accounts": [
-  {
-   "name": "Klinikkflow annonsekonto",
-   "id": "4459528394274918",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 7562.33,
-   "leads": 14,
-   "kr_per_lead": 540.17,
+  {"name": "Klinikkflow annonsekonto", "id": "4459528394274918", "currency": "NOK", "status": "aktiv", "spend": 8130.78, "leads": 17, "kr_per_lead": 478.28,
    "campaigns": [
-    {
-     "name": "KF Sweden Campaign",
-     "status": "aktiv",
-     "spend": 6161.61,
-     "leads": 13,
-     "kr_per_lead": 473.97,
-     "ctr": "1.59%",
-     "cpc": 14.64
-    },
-    {
-     "name": "Vekstkalkulator // KF // Norge",
-     "status": "off",
-     "spend": 817.66,
-     "leads": 0,
-     "kr_per_lead": null,
-     "ctr": "2.54%",
-     "cpc": 8.79
-    },
-    {
-     "name": "Klinikkflow - Gratis Strategisamtale",
-     "status": "off",
-     "spend": 583.06,
-     "leads": 1,
-     "kr_per_lead": 583.06,
-     "ctr": "1.21%",
-     "cpc": 24.29
-    }
-   ]
-  },
-  {
-   "name": "Lillestrøm Tannhelse",
-   "id": "984898987768905",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 4300.67,
-   "leads": 17,
-   "kr_per_lead": 252.98,
+    {"name": "KF Sweden Campaign", "status": "aktiv", "spend": 7038.18, "leads": 16, "kr_per_lead": 439.89, "ctr": "1.68%", "cpc": 14.16},
+    {"name": "Vekstkalkulator // KF // Norge", "status": "off", "spend": 852.24, "leads": 0, "kr_per_lead": null, "ctr": "2.80%", "cpc": 8.04},
+    {"name": "Klinikkflow - Gratis Strategisamtale", "status": "off", "spend": 240.36, "leads": 1, "kr_per_lead": 240.36, "ctr": "1.72%", "cpc": 20.03}
+   ]},
+  {"name": "Lillestrøm Tannhelse", "id": "984898987768905", "currency": "NOK", "status": "aktiv", "spend": 4199.88, "leads": 16, "kr_per_lead": 262.49,
    "campaigns": [
-    {
-     "name": "KF - Invisalign",
-     "status": "aktiv",
-     "spend": 2161.3,
-     "leads": 10,
-     "kr_per_lead": 216.13,
-     "ctr": "0.88%",
-     "cpc": 14.22
-    },
-    {
-     "name": "KF - Undersøkelse V2",
-     "status": "aktiv",
-     "spend": 2139.37,
-     "leads": 7,
-     "kr_per_lead": 305.62,
-     "ctr": "0.75%",
-     "cpc": 11.75
-    }
-   ]
-  },
-  {
-   "name": "Nurdent",
-   "id": "855555962141950",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 3938.73,
-   "leads": 14,
-   "kr_per_lead": 281.34,
+    {"name": "KF - Undersøkelse V2", "status": "aktiv", "spend": 2099.96, "leads": 7, "kr_per_lead": 299.99, "ctr": "0.76%", "cpc": 11.8},
+    {"name": "KF - Invisalign", "status": "aktiv", "spend": 2099.92, "leads": 9, "kr_per_lead": 233.32, "ctr": "0.90%", "cpc": 13.72}
+   ]},
+  {"name": "Nurdent", "id": "855555962141950", "currency": "NOK", "status": "aktiv", "spend": 4133.9, "leads": 19, "kr_per_lead": 217.57,
    "campaigns": [
-    {
-     "name": "KF - Undersøkelse 490 - V2",
-     "status": "aktiv",
-     "spend": 3938.73,
-     "leads": 14,
-     "kr_per_lead": 281.34,
-     "ctr": "1.19%",
-     "cpc": 7.53
-    }
-   ]
-  },
-  {
-   "name": "Storhamar Bil",
-   "id": "873090401637057",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 3148.19,
-   "leads": 33,
-   "kr_per_lead": 95.4,
+    {"name": "KF - Undersøkelse 490 - V2", "status": "aktiv", "spend": 4133.9, "leads": 19, "kr_per_lead": 217.57, "ctr": "1.28%", "cpc": 7.33}
+   ]},
+  {"name": "Storhamar Bil", "id": "873090401637057", "currency": "NOK", "status": "aktiv", "spend": 2800.0, "leads": 35, "kr_per_lead": 80.0,
    "campaigns": [
-    {
-     "name": "KF - Kommisjonssalg - V1",
-     "status": "aktiv",
-     "spend": 3148.19,
-     "leads": 33,
-     "kr_per_lead": 95.4,
-     "ctr": "2.67%",
-     "cpc": 4.66
-    }
-   ]
-  },
-  {
-   "name": "Ake klinikk",
-   "id": "1657659812232896",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 2316.34,
-   "leads": 55,
-   "kr_per_lead": 42.12,
+    {"name": "KF - Kommisjonssalg - V1", "status": "aktiv", "spend": 2800.0, "leads": 35, "kr_per_lead": 80.0, "ctr": "2.68%", "cpc": 4.38}
+   ]},
+  {"name": "Ynde Hudhelse", "id": "1271002075226887", "currency": "NOK", "status": "aktiv", "spend": 2121.24, "leads": 5, "kr_per_lead": 424.25,
+   "campaigns": [
+    {"name": "KF - Dermapen", "status": "off", "spend": 948.89, "leads": 1, "kr_per_lead": 948.89, "ctr": "1.73%", "cpc": 7.91},
+    {"name": "KF - Dermapen 2.0", "status": "aktiv", "spend": 466.46, "leads": 3, "kr_per_lead": 155.49, "ctr": "2.03%", "cpc": 9.15},
+    {"name": "KF - Secret Duo 2.0", "status": "off", "spend": 384.89, "leads": 0, "kr_per_lead": null, "ctr": "3.01%", "cpc": 6.41},
+    {"name": "KF - Secret Duo", "status": "off", "spend": 321.0, "leads": 1, "kr_per_lead": 321.0, "ctr": "2.75%", "cpc": 6.83}
+   ]},
+  {"name": "InkAway", "id": "256537491701126", "currency": "NOK", "status": "aktiv", "spend": 2099.95, "leads": 7, "kr_per_lead": 299.99,
+   "campaigns": [
+    {"name": "KF - Fjerning av tatovering", "status": "aktiv", "spend": 2099.95, "leads": 7, "kr_per_lead": 299.99, "ctr": "1.89%", "cpc": 3.98}
+   ]},
+  {"name": "Vekst & Balanse Klinikken", "id": "450846933892067", "currency": "NOK", "status": "aktiv", "spend": 2099.95, "leads": 22, "kr_per_lead": 95.45,
+   "campaigns": [
+    {"name": "KF - Quantum biofeedback", "status": "aktiv", "spend": 2099.95, "leads": 22, "kr_per_lead": 95.45, "ctr": "4.18%", "cpc": 3.15}
+   ]},
+  {"name": "Lumera Skin Clinic", "id": "746360314757056", "currency": "NOK", "status": "aktiv", "spend": 2099.73, "leads": 15, "kr_per_lead": 139.98,
+   "campaigns": [
+    {"name": "KF Profhilo v1", "status": "aktiv", "spend": 2099.73, "leads": 15, "kr_per_lead": 139.98, "ctr": "2.99%", "cpc": 6.88}
+   ]},
+  {"name": "Frisor Silva", "id": "1453941003080619", "currency": "SEK", "status": "aktiv", "spend": 2106.4, "leads": 0, "kr_per_lead": null,
+   "note": "10 soknader (Website applications) pa pauset kampanje - ikke lead-type",
+   "campaigns": [
+    {"name": "Silvia S", "status": "off", "spend": 1153.07, "leads": null, "kr_per_lead": null, "ctr": "4.33%", "cpc": 2.86},
+    {"name": "KF - Slingor kampanje", "status": "aktiv", "spend": 953.33, "leads": 0, "kr_per_lead": null, "ctr": "2.04%", "cpc": 4.72}
+   ]},
+  {"name": "Ake klinikk", "id": "1657659812232896", "currency": "NOK", "status": "aktiv", "spend": 1974.61, "leads": 50, "kr_per_lead": 39.49,
    "note": "leads utledet fra kost per resultat",
    "campaigns": [
-    {
-     "name": "KF - Headspa",
-     "status": "aktiv",
-     "spend": 1415.6,
-     "leads": 33,
-     "kr_per_lead": 42.9,
-     "ctr": "3.10%",
-     "cpc": 1.92
-    },
-    {
-     "name": "Osmotherm 21. v1 // KF",
-     "status": "off",
-     "spend": 900.74,
-     "leads": 22,
-     "kr_per_lead": 40.94,
-     "ctr": "3.10%",
-     "cpc": 3.97
-    }
-   ]
-  },
-  {
-   "name": "Ynde Hudhelse",
-   "id": "1271002075226887",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 2302.27,
-   "leads": 5,
-   "kr_per_lead": 460.45,
+    {"name": "KF - Headspa", "status": "aktiv", "spend": 1399.98, "leads": 36, "kr_per_lead": 38.89, "ctr": "3.12%", "cpc": 1.9},
+    {"name": "Osmotherm 21. v1 // KF", "status": "off", "spend": 574.63, "leads": 14, "kr_per_lead": 41.05, "ctr": "3.12%", "cpc": 4.13}
+   ]},
+  {"name": "Tannboden Brønnøysund", "id": "1100257754481402", "currency": "NOK", "status": "aktiv", "spend": 1915.37, "leads": 6, "kr_per_lead": 319.23,
    "campaigns": [
-    {
-     "name": "KF - Dermapen",
-     "status": "off",
-     "spend": 1106.77,
-     "leads": 1,
-     "kr_per_lead": 1106.77,
-     "ctr": "1.85%",
-     "cpc": 7.63
-    },
-    {
-     "name": "KF - Secret Duo",
-     "status": "off",
-     "spend": 491.65,
-     "leads": 1,
-     "kr_per_lead": 491.65,
-     "ctr": "2.49%",
-     "cpc": 7.93
-    },
-    {
-     "name": "KF - Secret Duo 2.0",
-     "status": "off",
-     "spend": 384.89,
-     "leads": 0,
-     "kr_per_lead": null,
-     "ctr": "3.01%",
-     "cpc": 6.41
-    },
-    {
-     "name": "KF - Dermapen 2.0",
-     "status": "aktiv",
-     "spend": 318.96,
-     "leads": 3,
-     "kr_per_lead": 106.32,
-     "ctr": "1.94%",
-     "cpc": 9.38
-    }
-   ]
-  },
-  {
-   "name": "Tannboden Brønnøysund",
-   "id": "1100257754481402",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 2241.58,
-   "leads": 8,
-   "kr_per_lead": 280.2,
+    {"name": "Implantat Konsultasjon v1 // GRATIS // KF", "status": "aktiv", "spend": 1399.08, "leads": 2, "kr_per_lead": 699.54, "ctr": "1.47%", "cpc": 6.27},
+    {"name": "Tannsjekk + Rens // 590,- // KF // v1", "status": "off", "spend": 516.29, "leads": 4, "kr_per_lead": 129.07, "ctr": "1.22%", "cpc": 7.38}
+   ]},
+  {"name": "HarmoniAkupunktur", "id": "63680104", "currency": "NOK", "status": "aktiv", "spend": 1425.2, "leads": 7, "kr_per_lead": 203.6,
    "campaigns": [
-    {
-     "name": "Implantat Konsultasjon v1 // GRATIS // KF",
-     "status": "aktiv",
-     "spend": 1415.88,
-     "leads": 3,
-     "kr_per_lead": 471.96,
-     "ctr": "1.57%",
-     "cpc": 5.95
-    },
-    {
-     "name": "Tannsjekk + Rens // 590,- // KF // v1",
-     "status": "off",
-     "spend": 825.7,
-     "leads": 5,
-     "kr_per_lead": 165.14,
-     "ctr": "1.31%",
-     "cpc": 6.71
-    }
-   ]
-  },
-  {
-   "name": "Vekst & Balanse Klinikken",
-   "id": "450846933892067",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 2179.41,
-   "leads": 21,
-   "kr_per_lead": 103.78,
+    {"name": "<KF> Harmoni Akupunktur [1 260 kr] (Kampanje 1)", "status": "aktiv", "spend": 1425.2, "leads": 7, "kr_per_lead": 203.6, "ctr": "1.49%", "cpc": 4.6}
+   ]},
+  {"name": "Bodyflow", "id": "2104248957054228", "currency": "NOK", "status": "aktiv", "spend": 1399.38, "leads": 0, "kr_per_lead": null,
    "campaigns": [
-    {
-     "name": "KF - Quantum biofeedback",
-     "status": "aktiv",
-     "spend": 2179.41,
-     "leads": 21,
-     "kr_per_lead": 103.78,
-     "ctr": "4.05%",
-     "cpc": 3.39
-    }
-   ]
-  },
-  {
-   "name": "InkAway",
-   "id": "256537491701126",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 2164.86,
-   "leads": 9,
-   "kr_per_lead": 240.54,
+    {"name": "EM Muskel Stim <KF> 599,-", "status": "aktiv", "spend": 1399.38, "leads": 0, "kr_per_lead": null, "ctr": "1.72%", "cpc": 13.86}
+   ]},
+  {"name": "Bailine Arendal", "id": "1346163396433367", "currency": "NOK", "status": "aktiv", "spend": 1123.69, "leads": 4, "kr_per_lead": 280.92,
    "campaigns": [
-    {
-     "name": "KF - Fjerning av tatovering",
-     "status": "aktiv",
-     "spend": 2164.86,
-     "leads": 9,
-     "kr_per_lead": 240.54,
-     "ctr": "1.95%",
-     "cpc": 3.88
-    }
-   ]
-  },
-  {
-   "name": "Lumera Skin Clinic",
-   "id": "746360314757056",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 2149.01,
-   "leads": 15,
-   "kr_per_lead": 143.27,
+    {"name": "<KF> Figurforming introtime 450,-", "status": "aktiv", "spend": 1123.69, "leads": 4, "kr_per_lead": 280.92, "ctr": "2.97%", "cpc": 4.18}
+   ]},
+  {"name": "Joachim Majambere (Coaching & Relasjoner)", "id": "1195735138262098", "currency": "NOK", "status": "aktiv", "spend": 1049.61, "leads": null, "kr_per_lead": null,
+   "note": "pixel-lead indikator uten rapportert verdi",
    "campaigns": [
-    {
-     "name": "KF Profhilo v1",
-     "status": "aktiv",
-     "spend": 2149.01,
-     "leads": 15,
-     "kr_per_lead": 143.27,
-     "ctr": "2.97%",
-     "cpc": 6.98
-    }
-   ]
-  },
-  {
-   "name": "Frisor Silva",
-   "id": "1453941003080619",
-   "currency": "SEK",
-   "status": "aktiv",
-   "spend": 1897.79,
-   "leads": 0,
-   "kr_per_lead": null,
-   "note": "12 soknader (Website applications) pa pauset kampanje - ikke lead-type",
+    {"name": "KF Direkte til booking", "status": "aktiv", "spend": 1049.61, "leads": null, "kr_per_lead": null, "ctr": "3.56%", "cpc": 6.21}
+   ]},
+  {"name": "Omsorgsgruppen Øst", "id": "2687347888130903", "currency": "NOK", "status": "aktiv", "spend": 461.76, "leads": null, "kr_per_lead": null,
+   "note": "objektiv = Website contacts (ikke lead), kr 51,31 per kontakt",
    "campaigns": [
-    {
-     "name": "Silvia S",
-     "status": "off",
-     "spend": 1380.4,
-     "leads": null,
-     "kr_per_lead": null,
-     "ctr": "4.54%",
-     "cpc": 2.74
-    },
-    {
-     "name": "KF - Slingor kampanje",
-     "status": "aktiv",
-     "spend": 517.39,
-     "leads": 0,
-     "kr_per_lead": null,
-     "ctr": "1.95%",
-     "cpc": 4.75
-    }
-   ]
-  },
-  {
-   "name": "HarmoniAkupunktur",
-   "id": "63680104",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 1429.76,
-   "leads": 5,
-   "kr_per_lead": 285.95,
+    {"name": "Ny Engasjement-kampanje", "status": "aktiv", "spend": 461.76, "leads": null, "kr_per_lead": null, "ctr": "3.00%", "cpc": 2.62}
+   ]},
+  {"name": "House of Vitality", "id": "1000405636103948", "currency": "NOK", "status": "aktiv", "spend": 451.67, "leads": 1, "kr_per_lead": 451.67,
    "campaigns": [
-    {
-     "name": "Harmoni Akupunktur (Kampanje 1)",
-     "status": "aktiv",
-     "spend": 1429.76,
-     "leads": 5,
-     "kr_per_lead": 285.95,
-     "ctr": "1.49%",
-     "cpc": 4.64
-    }
-   ]
-  },
-  {
-   "name": "Bodyflow",
-   "id": "2104248957054228",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 1146.72,
-   "leads": 0,
-   "kr_per_lead": null,
-   "campaigns": [
-    {
-     "name": "EM Muskel Stim <KF> 599,-",
-     "status": "aktiv",
-     "spend": 1146.72,
-     "leads": 0,
-     "kr_per_lead": null,
-     "ctr": "1.83%",
-     "cpc": 12.6
-    }
-   ]
-  },
-  {
-   "name": "Bailine Arendal",
-   "id": "1346163396433367",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 1099.49,
-   "leads": 4,
-   "kr_per_lead": 274.87,
-   "campaigns": [
-    {
-     "name": "<KF> Figurforming introtime 450,-",
-     "status": "aktiv",
-     "spend": 1099.49,
-     "leads": 4,
-     "kr_per_lead": 274.87,
-     "ctr": "2.74%",
-     "cpc": 4.58
-    }
-   ]
-  },
-  {
-   "name": "Joachim Majambere (Coaching & Relasjoner)",
-   "id": "1195735138262098",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 1056.14,
-   "leads": 0,
-   "kr_per_lead": null,
-   "campaigns": [
-    {
-     "name": "KF Direkte til booking",
-     "status": "aktiv",
-     "spend": 1056.14,
-     "leads": 0,
-     "kr_per_lead": null,
-     "ctr": "3.51%",
-     "cpc": 6.52
-    }
-   ]
-  },
-  {
-   "name": "Omsorgsgruppen Øst",
-   "id": "2687347888130903",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 465.31,
-   "leads": null,
-   "kr_per_lead": null,
-   "note": "objektiv = Website contacts (ikke lead)",
-   "campaigns": [
-    {
-     "name": "Ny Engasjement-kampanje",
-     "status": "aktiv",
-     "spend": 465.31,
-     "leads": null,
-     "kr_per_lead": null,
-     "ctr": "2.87%",
-     "cpc": 2.79
-    }
-   ]
-  },
-  {
-   "name": "House of Vitality",
-   "id": "1000405636103948",
-   "currency": "NOK",
-   "status": "aktiv",
-   "spend": 155.91,
-   "leads": 1,
-   "kr_per_lead": 155.91,
-   "campaigns": [
-    {
-     "name": "KF - Filler 0,5 ml kampanje",
-     "status": "aktiv",
-     "spend": 155.91,
-     "leads": 1,
-     "kr_per_lead": 155.91,
-     "ctr": "3.21%",
-     "cpc": 5.2
-    }
-   ]
-  }
+    {"name": "KF - Filler 0,5 ml kampanje", "status": "aktiv", "spend": 451.67, "leads": 1, "kr_per_lead": 451.67, "ctr": "2.93%", "cpc": 4.81}
+   ]}
  ],
- "tomme_dvale": [
-  "USD-konto 30855827",
-  "Froyd",
-  "Bailine Stavanger",
-  "Glow to Go",
-  "My skin klinikk",
-  "Medic Fot (annonsekonto)",
-  "Bailine hovedkontor",
-  "Lysaker Brygge Tannklinikk",
-  "Klinikk Tonsberg (Linda Rasmussen)",
-  "Cranioklinikken",
-  "DC Wholesale (Dui Clinique)",
-  "kleweBeauty",
-  "Force of Beauty"
- ],
+ "tomme_dvale": ["USD-konto 30855827", "Froyd", "Bailine Stavanger", "Glow to Go", "My skin klinikk", "Medic Fot (annonsekonto)", "Bailine hovedkontor", "Lysaker Brygge Tannklinikk", "Klinikk Tonsberg (Linda Rasmussen)", "Cranioklinikken", "DC Wholesale (Dui Clinique)", "kleweBeauty", "Force of Beauty"],
  "billing": [
-  {
-   "name": "Serene By Design",
-   "reason": "UNSETTLED"
-  },
-  {
-   "name": "Lillestrom Tannhelse (gammel konto)",
-   "reason": "DISABLED - uvanlig aktivitet"
-  },
-  {
-   "name": "Medic Fot Stokke",
-   "reason": "mangler betalingsmate"
-  },
-  {
-   "name": "Jawad (JawadXtra)",
-   "reason": "mangler betalingsmate"
-  },
-  {
-   "name": "SBC (Scandinavian Beauty Center)",
-   "reason": "mangler betalingsmate / MCP-utrulling"
-  },
-  {
-   "name": "Konto 637967305134171",
-   "reason": "mangler betalingsmate"
-  },
-  {
-   "name": "Elora Klinikken",
-   "reason": "MCP-utrulling"
-  },
-  {
-   "name": "Bailine Arendal (USD)",
-   "reason": "MCP-utrulling"
-  },
-  {
-   "name": "Ro Massasje",
-   "reason": "MCP-utrulling"
-  },
-  {
-   "name": "Pimentel Beauty",
-   "reason": "MCP-utrulling"
-  },
-  {
-   "name": "Konto 35409629",
-   "reason": "MCP-utrulling"
-  }
+  {"name": "Serene By Design", "reason": "UNSETTLED"},
+  {"name": "Lillestrom Tannhelse (gammel konto)", "reason": "DISABLED - uvanlig aktivitet"},
+  {"name": "Medic Fot Stokke", "reason": "mangler betalingsmate"},
+  {"name": "Jawad (JawadXtra)", "reason": "mangler betalingsmate"},
+  {"name": "SBC (Scandinavian Beauty Center)", "reason": "mangler betalingsmate / MCP-utrulling"},
+  {"name": "Konto 637967305134171", "reason": "mangler betalingsmate"},
+  {"name": "Elora Klinikken", "reason": "MCP-utrulling"},
+  {"name": "Bailine Arendal (USD)", "reason": "MCP-utrulling"},
+  {"name": "Ro Massasje", "reason": "MCP-utrulling"},
+  {"name": "Pimentel Beauty", "reason": "MCP-utrulling"},
+  {"name": "Konto 35409629", "reason": "MCP-utrulling"}
  ]
 }
